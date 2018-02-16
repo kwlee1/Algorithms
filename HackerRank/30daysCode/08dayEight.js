@@ -9,26 +9,22 @@
 // is not found, print Not found instead. 
 
 function processData(input) {
-    //Enter your code here
-    var array=input.split("\n")
-    var hashtable={}; 
-    for(var i=1;i<=array[0];i++){
-        var temp=array[i].split(" ")
-        if(hashtable[array[k]]){
-            continue; 
-        }else{
-            hashtable[temp[0]]=temp[1];    
-        }
+    input = input.split('\n')
+    var N = parseInt(input[0])
+
+    var phonebook = {}
+    for (var k = 1; k<N+1; k++){
+        var line = input[k]
+        line = line.split(' ')
+        phonebook[line[0]] = line[1]
     }
-    for(var k=array.length-array[0];k<array.length;k++){
-        if(hashtable[array[k]]){
-            console.log(array[k]+"="+hashtable[array[k]])
-        }else{
-            console.log("Not found");
+
+    for (var m = N+1; m < input.length; m++ ){
+        var num = (phonebook[input[m]])
+        if (num !== undefined){
+            console.log(input[m]+'='+num)
+        } else {
+            console.log('Not found')
         }
     }
 } 
-
-// Out of Test Case #0-#4, #1 was incorrect. n=100000 
-// so couldn't figure out problem.
-
