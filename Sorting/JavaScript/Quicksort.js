@@ -1,3 +1,9 @@
+// This version uses two helper methods. Swap takes in an array and two indices and swaps those two values. 
+// The partition function runs a partition sort and then returns the index that divides the two sorted sides. 
+// The quickSort function then uses the index to see if any additional sorting needs to be done 
+// with updated left and right edges. 
+
+
 function swap(arr,idx1,idx2){
     var temp = arr[idx1];
     arr[idx1] = arr[idx2];
